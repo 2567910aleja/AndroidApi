@@ -65,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
             JSONArray miJsonArray=miJsonObj.getJSONArray("data");
 
             // Ahora coloco los datos en el Listview, recycler
-            // Crear el adaptador en un nuevo java class
+            // Crear el constructor del adaptador en un nuevo java class y creo el adaptador aqui
+            Adaptador miAdaptador= new Adaptador(this,miJsonArray);
+            recyclerLista.setAdapter(miAdaptador);
         }else{
             Toast.makeText(this, ""+respuesta, Toast.LENGTH_SHORT).show();
         }
